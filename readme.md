@@ -32,7 +32,3 @@ Passo1: Acessar a pasta YAML dentro do projeto
 Passo2: Usar os arquivos YAML para  criação do banco de dados e deploy de microserviços através do DashBoard do Kubernetes
 
 As imagens Docker do microserviço estão no repositório público do Docker Hub
-
-## Acesso ##
-
-Acesso ao github pelo url: 
