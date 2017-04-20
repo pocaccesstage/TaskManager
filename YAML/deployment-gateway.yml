@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gateway
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gateway
+    spec:
+      containers:
+      - name: gateway
+        image: pocaccesstage/taskmanager-gateway
+        ports:
+        - containerPort: 4000
+        env:
+        - name: CONFIG_SERVICE_PASSWORD 
+          value: "senh@"
+        - name: DB_PASS
+          value: "@#ACCESSTAG@#"

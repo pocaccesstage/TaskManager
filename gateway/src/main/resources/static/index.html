@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>Gerenciador de Tarefas</title>
+</head>
+
+<body>
+	<!-- Compiled and minified CSS -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<div class="fixed-action-btn taskList">
+		<!-- Modal Trigger -->
+		<a data-target="modalSalvarAssunto"
+			class="btn-floating btn-large add-task" href="#modalSalvarAssunto"> <i
+			class="material-icons">add</i>
+		</a>
+	</div>
+	<!-- 	<div  style="background-color:yellow; width:100%" class="center" > -->
+	<div class="row center loginBox" style="margin: 0px auto;">
+		<div class="col s12 m6">
+			<div class="card grey lighten-5">
+				<!-- 				<form action="user/login" id="auth" method="post" autocomplete="off"> -->
+				<div class="card-content">
+					<span class="card-title"><h2 class="grey-text text-darken-2">
+							<b>Accesstage POC</b>
+						</h2></span>
+					<div class="side" id="side1">
+						<div id="backlogin"></div>
+						<div id="enter"></div>
+						<div class="input-field">
+							<input class="frontforms" id="username" name="username"
+								placeholder="" type="text" autocomplete="off" /> <label
+								for="username">Login</label>
+						</div>
+					</div>
+					<div class="side" id="side2">
+						<div id="backpassword"></div>
+						<div class="input-field">
+							<input class="frontforms" id="password" name="password"
+								placeholder="" type="password" autocomplet	e="off" /> <label
+								for="password">Senha</label>
+						</div>
+					</div>
+				</div>
+				<div class="card-action">
+					<!-- 				<span class="white error-login"><i class="material-icons left">&nbsp;&nbsp;Login incorreto</span> -->
+					<button class="btn waves-effect waves-light blue" id="login"
+						name="loginSubmit">Login</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- 	</div> -->
+	<div class="taskList">
+		<br /> <br />
+		<button class="btn waves-effect waves-light red" id="logout"
+			name="loginSubmit">Logout</button>
+
+		<h2 class="center-align">Tarefas</h2>
+
+		<table class="bordered centered" id="taskList">
+			<thead>
+				<tr>
+					<th>Descrição</th>
+					<th>E-mail</th>
+					<th>Prazo</th>
+					<th>Criação</th>
+					<th>Concluído?</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<br />
+	<br />
+
+	<!-- Modal Structure -->
+	<div id="modalSalvarAssunto" class="modal">
+		<div class="modal-content">
+			<h4>Salvar/Criar tarefa</h4>
+			<div class="input-field">
+				<input id="taskDescription" type="text" class="validate"> <label
+					for="taskDescription">Descrição</label>
+			</div>
+			<div class="input-field">
+				<input id="taskDueDate" type="date" class="validate datepicker">
+				<label for="taskDueDate">Prazo</label>
+			</div>
+			<div class="input-field">
+				<input id="taskEmail" type="email" class="validate"> <label
+					for="taskEmail">E-mail</label>
+			</div>
+			<div class="input-field">
+				<input id="taskIsCompleted" type="checkbox" /> <label
+					for="taskIsCompleted">Está completada?</label>
+			</div>
+
+		</div>
+		<div class="modal-footer">
+			<a
+				class="modal-action modal-close waves-effect waves-light btn btn-flat">Fechar</a>
+			<a class="waves-effect waves-light btne4 save-task">Salvar</a>
+		</div>
+	</div>
+
+	<!-- Modal Structure -->
+	<div id="modalApagarAssunto" class="modal">
+		<div class="modal-content">
+			<h4>Apagar tarefa?</h4>
+			<p>Deseja realmente apagar tarefa?</p>
+		</div>
+		<div class="modal-footer">
+			<a
+				class="modal-action modal-close waves-effect waves-light btn btn-flat">Fechar</a>
+			<a class="waves-effect waves-light btn red delete-task">Apagar</a>
+		</div>
+	</div>
+	<script>
+	$(".taskList").hide();	
+	$(".loginBox").hide();	
+	</script>
+	<script src="js/task.js" charset="utf-8"></script>
+	
+
+
+</body>
+
+</html>

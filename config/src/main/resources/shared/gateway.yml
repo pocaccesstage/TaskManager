@@ -1,0 +1,48 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000 
+
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    auth-service:
+        path: /uaa/**
+        url: http://auth-service:5000
+        stripPrefix: false
+        sensitiveHeaders:
+        
+    task-service:
+        path: /task/**
+        serviceId: task-service
+        stripPrefix: false
+        sensitiveHeaders:
+        
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/pgdb
+    username: postgres
+    password: ${DB_PASS}
+    driverClassName: org.postgresql.Driver
+    platform: postgresql
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      use-new-id-generator-mappings: true
+      hbm2ddl.auto: create
+      
+server:
+  port: 4000

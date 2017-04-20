@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: task-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: task-service
+    spec:
+      containers:
+      - name: task-service
+        image: pocaccesstage/taskmanager-task-service
+        ports:
+        - containerPort: 60000
+        env:
+        - name: CONFIG_SERVICE_PASSWORD 
+          value: "senh@"
+        - name: DB_PASS
+          value: "@#ACCESSTAG@#"

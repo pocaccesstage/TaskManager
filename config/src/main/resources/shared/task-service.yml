@@ -1,0 +1,26 @@
+security:
+  oauth2:
+    client:
+      clientId: task-service
+      clientSecret: ${ACCOUNT_SERVICE_PASSWORD}
+      accessTokenUri: http://auth-service:5000/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server
+
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/pgdb
+    username: postgres
+    password: ${DB_PASS}
+    platform: postgresql
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      use-new-id-generator-mappings: true
+      hbm2ddl.auto: create
+        
+server:
+  context-path: /task
+  port: 60000

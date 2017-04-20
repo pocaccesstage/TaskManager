@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: registry
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: registry
+    spec:
+      containers:
+      - name: registry
+        image: pocaccesstage/taskmanager-registry
+        ports:
+        - containerPort: 8761
+        env:
+        - name: CONFIG_SERVICE_PASSWORD 
+          value: "senh@" 
+        - name: DB_PASS
+          value: "@#ACCESSTAG@#"
