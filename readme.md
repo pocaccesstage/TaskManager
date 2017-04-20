@@ -6,6 +6,7 @@ Apresentamos uma aplicação que foi construída em microserviços usando Spring
 
 O gerenciador de tarefas tem layout responsivo, possui autenticação de usuários e uma página com controles CRUD(create, replace, update e delete).
 
+A plataforma de nuvem utilizada foi o google cloud, portanto o YAML de criação do disco faz referência ao GCE do google.
 ### Elementos funcionais ###
 
 Aplicação foi decomposta em 2 microserviços principais: Login e Tarefas.

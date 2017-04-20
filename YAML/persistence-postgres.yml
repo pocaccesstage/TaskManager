@@ -1,14 +1,15 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pg-data-disk
+  name: disk-postgres
   labels:
-    name: pg-data-disk
+    name: disk-postgres
 spec:
   capacity:
-    storage: 50Gi
+    storage: 25Gi
   accessModes:
     - ReadWriteOnce
   gcePersistentDisk:
+    #pdName: "disk-postgres"
     pdName: "pg-data-disk"
     fsType: "ext4"

@@ -17,8 +17,8 @@ spec:
         - containerPort: 5432
       volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: pg-data
+          name: disk-postgres
   volumes:
-    - name: pg-data
+    - name: disk-postgres
       persistentVolumeClaim:
-        claimName: pg-data-claim
+        claimName: claim-postgres
