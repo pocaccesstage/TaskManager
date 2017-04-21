@@ -7,8 +7,7 @@ $(function() {
 	$('#modalSalvarAssunto').modal();
 	$('#modalApagarAssunto').modal();
 	
-			
-			
+					
 	
 	
 	$('.datepicker').pickadate({

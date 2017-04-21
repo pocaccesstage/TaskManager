@@ -1,7 +1,5 @@
 package com.taskmanager.task.controller;
 
-import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -22,27 +20,7 @@ public class TaskController {
 
 	@Autowired
 	private TaskService taskService;
-
-	@RequestMapping(path = "/current", method = RequestMethod.GET)
-	public List<Task> getData(Principal principal) {
-
-		List<Task> lista = new ArrayList<Task>();
-
-		for (int i = 1; i <= 10; i++) {
-			Task t1 = new Task();
-			t1.setId(i);
-			t1.setCreationDate("16/04/2017");
-			t1.setDescription("Task " + i);
-			t1.setDueDate("18/04/2017");
-			t1.setEmail("dds@dds.com.br");
-			t1.setIsCompleted(true);
-
-			lista.add(t1);
-		}
-
-		return lista;
-	}
-
+	
 	@RequestMapping(value = "/list", method = RequestMethod.GET, produces = "application/json")
 	public List<Task> list() {
 		return taskService.list();

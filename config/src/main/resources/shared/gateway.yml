@@ -31,7 +31,7 @@ zuul:
         
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/pgdb
+    url: jdbc:postgresql://104.196.127.104:5432/pgdb
     username: postgres
     password: ${DB_PASS}
     driverClassName: org.postgresql.Driver
